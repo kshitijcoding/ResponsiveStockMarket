@@ -1,0 +1,17 @@
+.Header {
+    .container {
+        max-width: 100%;
+        width: 1322px;
+    }
+
+    .notification {
+        display: flex;
+
+        .title {
+            text-align: center;
+            padding-top: 10px;
+            width: 100%;
+        }
+    }
+}
+
