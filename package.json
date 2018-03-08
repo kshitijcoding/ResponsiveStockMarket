@@ -47,7 +47,9 @@
     "webpack-dev-server": "^2.11.2"
   },
   "dependencies": {
+    "antd": "^3.2.3",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "reactbulma": "^1.1.1"
   }
 }
