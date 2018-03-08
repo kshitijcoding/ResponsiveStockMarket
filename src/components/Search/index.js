@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Input } from 'antd';
+// import { Input } from 'antd';
 import './search.scss';
-import 'antd/dist/antd.css';
+// import 'antd/dist/antd.css';
+import { Input } from 'semantic-ui-react';
 
 class Search extends Component {
     constructor(props) {
@@ -9,19 +10,32 @@ class Search extends Component {
         this.state =  {
             stockSymbol: ""
         }
+
+        this.handleOnChange = this.handleOnChange.bind(this);
+    }
+
+    handleOnChange(e) {
+        this.state.stockSymbol = e.target.value;
+        console.log(this.state.stockSymbol, e);
     }
 
     render() {
         const stockSymbolTextBoxProps = {
-            id: "StockSymbol",
             placeholder : "Enter Stock Symbol",
-            enterButton: "Search",
             value: this.state.stockSymbol
+        };
+
+        const stockSymbolTextBox2Props = {
+            // label: "StockSymbol",
+            placeholder : "Enter Stock Symbol",
+            error : false,
+            onChange: this.handleOnChange,
         };
         return (
             <div className="Search">
-                <div className="example-input">
-                    <Input.Search {...stockSymbolTextBoxProps} />
+                <div >
+                    {/* <Input.Search {...stockSymbolTextBoxProps} /> */}
+                    <Input {...stockSymbolTextBox2Props} />
                 </div>
             </div>
         );
