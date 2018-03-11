@@ -1,13 +1,6 @@
 .Search {
 
-    .ant-input-search.ant-input-search-enter-button > .ant-input-suffix {
-        padding-top: 46px;
-        margin-left: 48px;
-    }
-
-    .ant-input-affix-wrapper{
-        padding-top: 47px;
-        padding-left: 150px;
-        width: 70%;
-    }
+    .ui.input {
+        padding: 0;
+        }
 }

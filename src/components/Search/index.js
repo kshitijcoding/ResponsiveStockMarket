@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-// import { Input } from 'antd';
 import './search.scss';
-// import 'antd/dist/antd.css';
-import { Input } from 'semantic-ui-react';
+import { Input, Button } from 'semantic-ui-react';
+import 'semantic-ui-css/semantic.min.css';
 
 class Search extends Component {
     constructor(props) {
@@ -20,22 +19,21 @@ class Search extends Component {
     }
 
     render() {
-        const stockSymbolTextBoxProps = {
-            placeholder : "Enter Stock Symbol",
-            value: this.state.stockSymbol
-        };
 
-        const stockSymbolTextBox2Props = {
-            // label: "StockSymbol",
+        const stockSymbolTextBoxProps = {
+            label: "StockSymbol",
             placeholder : "Enter Stock Symbol",
             error : false,
             onChange: this.handleOnChange,
         };
+        const searchBtnProps = {
+            primary: true,
+        };
         return (
             <div className="Search">
                 <div >
-                    {/* <Input.Search {...stockSymbolTextBoxProps} /> */}
-                    <Input {...stockSymbolTextBox2Props} />
+                    <Input {...stockSymbolTextBoxProps} />
+                    <Button {...searchBtnProps}>Search</Button>
                 </div>
             </div>
         );

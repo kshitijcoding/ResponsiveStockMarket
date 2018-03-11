@@ -16,7 +16,7 @@ const config = {
                 ]
             },
             {
-                test: /\.scss$/, 
+                test: /\.(scss|sass)$/, 
                 loader: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use:[
@@ -24,6 +24,10 @@ const config = {
                         {loader: 'sass-loader'}
                     ]
                 })
+            },
+            {
+                test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+                loader: 'url-loader?limit=100000'
             },
             {
                 test: /\.css$/, 
