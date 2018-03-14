@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
-import './search.scss';
+import PropTypes from 'prop-types';
+
 import { Input, Button } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
+import './search.scss';
+
+
+const propTypes = {
+	onStockSearch : PropTypes.func.isRequired,
+	isSearchSuccess: PropTypes.bool.isRequired,
+	stockData: PropTypes.object
+}
 
 class Search extends Component {
     constructor(props) {
@@ -15,7 +24,12 @@ class Search extends Component {
 
     handleOnChange(e) {
         this.state.stockSymbol = e.target.value;
-        console.log(this.state.stockSymbol, e);
+    }
+
+    handleOnClickSearch(e) {
+        console.log("I am fucking clicked");
+        // let url = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=CTSH&interval=1min&apikey=2FZIVBF4TZA5XLXB";
+        // this.props.onStockSearch(url);
     }
 
     render() {
@@ -28,6 +42,8 @@ class Search extends Component {
         };
         const searchBtnProps = {
             primary: true,
+            size: "large",
+            onClick: this.handleOnClickSearch
         };
         return (
             <div className="Search">
@@ -39,5 +55,7 @@ class Search extends Component {
         );
     }
 }
+
+// Search.propTypes =propTypes;
 
 export default Search   ;
